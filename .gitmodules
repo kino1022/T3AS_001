@@ -1,0 +1,6 @@
+[submodule "Assets/GenerallySystem["]
+	path = Assets/GenerallySystem[
+	url = https://github.com/kino1022/GenerallySystem.git
+[submodule "Assets/GenerallySystem"]
+	path = Assets/GenerallySystem
+	url = https://github.com/kino1022/GenerallySystem.git
