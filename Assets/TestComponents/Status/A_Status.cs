@@ -9,6 +9,11 @@ namespace Test.Status {
 	/// </summary>
 	public class A_Status : MonoBehaviour {
 
+		/// <summary>
+		/// ステータスの名前
+		/// </summary>
+		[SerializeField] private string _statusName;
+
 		[SerializeField] private float _baseValue = 0.0f;
 		/// <summary>
 		/// ステータスの基礎量
@@ -36,15 +41,28 @@ namespace Test.Status {
 
 		private void Start () {
 			_collection = GetComponent<A_CollectionManager>();
-			collection.wasChanged.AddListener(value = WasCollectionValueChanged());
+			_collection.wasChanged += wasChangeCollections;
 		}
 
 		private void Update () {
 			
 		}
 
-		private float WasCollectionValueChanged () {
-			
+		/// <summary>
+		/// 補正値の値が変化した際に呼び出されて、変化後の補正値を計算した値でvalueを上書きするメソッド
+		/// </summary>
+		/// <param name="ratioValue"></param>
+		/// <param name="fixedValue"></param>
+		private void wasChangeCollections (float ratioValue,float fixedValue) {
+			_value = (baseValue * ratioValue) + fixedValue;
+		}
+		/// <summary>
+		/// ステータスの元の値を変化するメソッド
+		/// </summary>
+		/// <param name="changeValue">変化量</param>
+		public void ChangeBaseValue (float changeValue) {
+			Debug.Log($"{changeValue}分、{_statusName}の値を変化させます");
+			_baseValue += changeValue;
 		}
 	}
 }
