@@ -1,4 +1,5 @@
 using GenerallySys.CollectionManageSys;
+using GenerallySys.CollectionManageSys.Test;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -65,5 +66,7 @@ namespace Test.Status {
 			Debug.Log($"{changeValue}•ªA{_statusName}‚Ì’l‚ğ•Ï‰»‚³‚¹‚Ü‚·");
 			_baseValue += changeValue;
 		}
+
+		
 	}
 }
