@@ -26,12 +26,11 @@ namespace Test.Character.Inventory {
 			get { return _higher; }
 			set { _higher = value; }
 		}
+
 		/// <summary>
-		/// インベントリ内のアイテムのリスト
+		/// インベントリに格納しているアイテムのリスト
 		/// </summary>
-		[SerializeField] List<ItemData> items = new List<ItemData>();
-
-
+		[SerializeField] public List<ItemEntry> items = new List<ItemEntry>();
 	}
 
 }
