@@ -58,6 +58,7 @@ namespace Test.Status {
 		private void wasChangeCollections (float ratioValue,float fixedValue) {
 			_value = (baseValue * ratioValue) + fixedValue;
 		}
+
 		/// <summary>
 		/// ステータスの元の値を変化するメソッド
 		/// </summary>
