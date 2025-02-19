@@ -1,5 +1,6 @@
 using GenerallySys.CollectionManageSys;
 using GenerallySys.CollectionManageSys.Test;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,10 +22,24 @@ namespace Test.Status {
 		/// ステータスの基礎量
 		/// </summary>
 		public float baseValue {
-			get { return _baseValue; }
+			get {
+				//0以下の際に参照されると0を返す仕様
+				if (_baseValue <= 0f) {
+					return 0;
+				}
+				else {
+					return _baseValue;
+				}
+			}
+			set {
+				_baseValue = value;
+				wasChangeCollections(_collection.totalRatio, _collection.totalFixed);
+				wasValueChanged?.Invoke(_baseValue, _value);
+			}
 		}
 
 		[SerializeField] private A_CollectionManager _collection;
+
 		/// <summary>
 		/// 補正値管理コンポーネント(読み込み専用)
 		/// </summary>
@@ -37,17 +52,29 @@ namespace Test.Status {
 		/// 補正値等込みでのステータスの値
 		/// </summary>
 		public float value {
-			get { return _value; }
-			set { _value = value; }
+			get { 
+				//0以下の場合に参照されると0を返す仕様
+				if (_value <= 0f) {
+					return 0;
+				}
+				else {
+					return _value;
+				}
+			}
+			set {
+				_value = value;
+				wasValueChanged?.Invoke(_baseValue, _value);
+			}
 		}
+
+		/// <summary>
+		/// 値が変化した際に発火されるイベント。引数は(baseValue,value)の順。
+		/// </summary>
+		public Action<float, float> wasValueChanged;
 
 		private void Start () {
 			_collection = GetComponent<A_CollectionManager>();
 			_collection.wasChanged += wasChangeCollections;
-		}
-
-		private void Update () {
-			
 		}
 
 		/// <summary>
@@ -58,16 +85,5 @@ namespace Test.Status {
 		private void wasChangeCollections (float ratioValue,float fixedValue) {
 			_value = (baseValue * ratioValue) + fixedValue;
 		}
-
-		/// <summary>
-		/// ステータスの元の値を変化するメソッド
-		/// </summary>
-		/// <param name="changeValue">変化量</param>
-		public void ChangeBaseValue (float changeValue) {
-			Debug.Log($"{changeValue}分、{_statusName}の値を変化させます");
-			_baseValue += changeValue;
-		}
-
-		
 	}
 }

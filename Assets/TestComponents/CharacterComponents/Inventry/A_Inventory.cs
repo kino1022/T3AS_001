@@ -24,13 +24,21 @@ namespace Test.Character.Inventory {
 		/// </summary>
 		public int higher {
 			get { return _higher; }
-			set { _higher = value; }
+			set { 
+				_higher = value;
+			}
 		}
 
-		/// <summary>
-		/// インベントリに格納しているアイテムのリスト
-		/// </summary>
-		[SerializeField] public List<ItemEntry> items = new List<ItemEntry>();
+		public List<ItemEntry> items = new List<ItemEntry>();
+
+		public void AddNewItem (ItemEntry item) {
+			if (items.Count >= wigth * higher) {
+				//アイテムドロップ処理を呼び出す
+			}
+			else {
+				items.Add (item);
+			}
+		}
 	}
 
 }
