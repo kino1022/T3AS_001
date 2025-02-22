@@ -15,9 +15,14 @@ namespace Test.Character.Inventory {
         /// </summary>
         public int amount {
             get { return _amount; }
-            set {
-                _amount = value;
+            set { 
+                amount = value;
             }
+        }
+
+        public ItemEntry (ItemData item, int value) {
+            this.item = item;
+            this.amount = value;
         }
     }
 }

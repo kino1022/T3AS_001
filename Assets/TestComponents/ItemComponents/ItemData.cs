@@ -10,5 +10,9 @@ namespace Test.Item {
         /// アイテムの名前
         /// </summary>
         public string ItemName;
+        /// <summary>
+        /// アイテムの持つ特徴
+        /// </summary>
+        public List<A_ItemFeature> features;
     }
 }

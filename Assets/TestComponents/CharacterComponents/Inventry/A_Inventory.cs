@@ -15,7 +15,10 @@ namespace Test.Character.Inventory {
 		/// </summary>
 		public int wigth {
 			get { return _wigth; }
-			set { _wigth = value; }
+			set { 
+				_wigth = value;
+				maxStack = _wigth * _higher;
+			}
 		}
 
 		[SerializeField] private int _higher = 13;
@@ -26,17 +29,20 @@ namespace Test.Character.Inventory {
 			get { return _higher; }
 			set { 
 				_higher = value;
+				maxStack = _higher * _wigth;
 			}
 		}
 
+		public int maxStack = 0;
+
 		public List<ItemEntry> items = new List<ItemEntry>();
 
-		public void AddNewItem (ItemEntry item) {
+		public void AddNewItem (ItemData item,int Amount) {
 			if (items.Count >= wigth * higher) {
-				//アイテムドロップ処理を呼び出す
+				
 			}
 			else {
-				items.Add (item);
+				items.Add (new ItemEntry(item,Amount));
 			}
 		}
 	}
