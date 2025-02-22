@@ -62,7 +62,5 @@ namespace Test.Character.Status {
 		/// ステータス補正値の管理クラス
 		/// </summary>
 		[SerializeField] public A_CollectionManager statusCollection;
-
-		
 	}
 }
