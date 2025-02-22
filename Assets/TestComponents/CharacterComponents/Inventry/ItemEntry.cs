@@ -3,6 +3,9 @@ using Test.Item;
 using UnityEngine;
 
 namespace Test.Character.Inventory {
+    /// <summary>
+    /// インベントリでアイテムを管理する際の単位。一ブロックがItemEntryインスタンス一個に相当する。
+    /// </summary>
     public class ItemEntry {
         /// <summary>
         /// エントリーしているアイテムのデータ
