@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "T3AS_001.sln"
+    "dotnet.defaultSolution": "T3AS_001.sln",
+    "dotnet.preferCSharpExtension": true
 }
