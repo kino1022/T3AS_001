@@ -7,7 +7,9 @@ namespace Test.Character.Status {
 	/// 全てのステータスの基底クラス
 	/// </summary>
 	public abstract class A_Status : MonoBehaviour {
-
+		/// <summary>
+		/// ステータスの名前
+		/// </summary>
 		[SerializeField] private string _statusName;
 
 		private float _baseValue;
@@ -70,8 +72,7 @@ namespace Test.Character.Status {
 		/// ステータス補正値の管理クラス
 		/// </summary>
 		[SerializeField] public A_CollectionManager statusCollection;
-<<<<<<< HEAD
-=======
+
 
 		/// <summary>
 		/// 値が変化された際に発火されるイベント
@@ -105,6 +106,5 @@ namespace Test.Character.Status {
 		protected virtual void WasStartColled () {
 
 		}
->>>>>>> 7c36da2671f2e2df3a8a22bfe68c8a3a76dee36f
 	}
 }

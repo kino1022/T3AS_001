@@ -5,9 +5,8 @@ using UnityEngine;
 namespace Test.Character.Skill {
 	[System.Serializable]
 	[CreateAssetMenu(fileName = "SkillData",menuName = "スキルデータ")]
-
 	/// <summary>
-	/// 
+	/// スキルのデータ
 	/// </summary>
 	public class SkillData : ScriptableObject {
 		/// <summary>
