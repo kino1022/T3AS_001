@@ -8,6 +8,10 @@ namespace Test.Character.Status.Examples{
         /// ‰ñ•œ—Ê‚Ì•â³’l‚ğŠÇ—‚·‚éƒNƒ‰ƒX
         /// </summary>
         [SerializeField] public A_CollectionManager healValueCollection;
-        
+
+        protected override void WasStartColled(){
+            base.WasStartColled();
+            
+        }
     }
 }

@@ -12,6 +12,5 @@ namespace Test.Character.Status {
 		/// 影響を与えるステータス
 		/// </summary>
 		[SerializeField] private List<A_Status> _baseStatuses;
-
 	}
 }
