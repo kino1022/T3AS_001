@@ -9,6 +9,8 @@ namespace Test.Character.Effect.Test {
 	/// </summary>
 	public class DummyDebuffEffect : A_Effect {
 
+		public String name = "Œ±—pb‘Ï‹vŒ¸­";
+
 		private CancellationTokenSource cts = new CancellationTokenSource();
 
 		public DummyDebuffEffect (int decreaseValue,float decreaseSpan) {
@@ -27,7 +29,15 @@ namespace Test.Character.Effect.Test {
 		/// <param name="decreaseSpan"></param>
 		/// <returns></returns>
 		private async UniTaskVoid DecreaseHPPerTime (CancellationToken token,int decreaseValue,float decreaseSpan) {
+			try{
+				Debug.Log($"{this.name}‚ÌbHPŒ¸­ˆ—‚ğŠJn‚µ‚Ü‚·");
+			}
+			catch (OperationCanceledException){
 
+			}
+			finally {
+
+			}
 		}
 	}
 }
