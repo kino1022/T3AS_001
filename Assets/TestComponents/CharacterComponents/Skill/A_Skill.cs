@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Test.Character.Ability;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,13 +12,15 @@ namespace Test.Character.Skill {
         /// <summary>
         /// スキルの名前（ゲーム中の表記に用いる名前）
         /// </summary>
-        [SerializeField] public string skillName;
+        public string skillName;
         /// <summary>
         /// このスキルのデータ
         /// </summary>
-        [SerializeField] private SkillData _data;
-
-        [SerializeField] private int _level;
+        private SkillData _data;
+        /// <summary>
+        /// 現在のスキルレベル
+        /// </summary>
+        private int _level;
 
         /// <summary>
         /// 現在のスキルレベル
@@ -35,10 +39,13 @@ namespace Test.Character.Skill {
         /// </summary>
         public UnityEvent<int> skillLevelUp;
 
+
+
         private void wasSkillLevelUp (int level) {
             foreach(var ability in _data.abilitys){
                 if (ability.skillLevel == level) {
                     //アビリティリストのコンポーネントにアビリティを入れる処理ヲ書き込む。
+                    
                     return;
                 }
             }

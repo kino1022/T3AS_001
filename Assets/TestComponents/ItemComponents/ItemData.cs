@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Test.Item {
+    [System.Serializable]
     [CreateAssetMenu(fileName = "NewItem",menuName ="Item/itemData")]
     public class ItemData : ScriptableObject {
         /// <summary>
@@ -11,8 +12,8 @@ namespace Test.Item {
         /// </summary>
         public string ItemName;
         /// <summary>
-        /// アイテムの持つ特徴
+        /// 最大スタック数
         /// </summary>
-        public List<A_ItemFeature> features;
+        public int maxStack = 1;
     }
 }

@@ -3,19 +3,19 @@ using UnityEngine;
 
 namespace Test.Character.Definition{
     /// <summary>
-    /// ãƒ€ãƒ¡ãƒ¼ã‚¸åˆ†é¡
+    /// ƒ_ƒ[ƒW•ª—Ş
     /// </summary>
     public enum DamageType {
         /// <summary>
-        /// ç„¡åˆ†é¡
+        /// –³•ª—Ş
         /// </summary>
         None,
         /// <summary>
-        /// ç‰©ç†
+        /// •¨—
         /// </summary>
         Physical,
         /// <summary>
-        /// é­”æ³•
+        /// –‚–@
         /// </summary>
         Magic,
     }

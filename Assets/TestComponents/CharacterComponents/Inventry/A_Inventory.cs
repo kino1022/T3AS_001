@@ -42,7 +42,21 @@ namespace Test.Character.Inventory {
 				
 			}
 			else {
-				items.Add (new ItemEntry(item,Amount));
+
+			}
+		}
+
+		private void InsideNewItem (ItemData item,int Amount) {
+			//同一アイテムが既に入ってないかの検索処理
+			foreach (var entry in items) {
+				if (entry.item == item && entry.amount + Amount >= item.maxStack) {
+					entry.amount += Amount;
+					Debug.Log($"{entry.item.ItemName}をインベントリ内のエントリに{Amount}加算しました。現在の所持数は{entry.amount}です!!");
+				}
+				//同一エントリが存在しなかった際の処理
+				else{
+
+				}
 			}
 		}
 	}

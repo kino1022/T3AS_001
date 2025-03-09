@@ -14,8 +14,8 @@ namespace Test.Character.Resistance {
         /// </summary>
         [SerializeField] private String _resistName;
         /// <summary>
-        /// ‘Ï«‚ğ‚Â‘ÎÛ
+        /// ‘Ï«‚ğ‚Â‘ÎÛ‚Ì‘®«
         /// </summary>
-        public Elements _elements;
+        [SerializeField] private Elements _elements;
     }
 }

@@ -9,6 +9,7 @@ namespace Test.Character.Skill {
 	/// スキルのデータ
 	/// </summary>
 	public class SkillData : ScriptableObject {
+		
 		/// <summary>
 		/// 習得アビリティと習得熟練度を記したデータの配列
 		/// </summary>
