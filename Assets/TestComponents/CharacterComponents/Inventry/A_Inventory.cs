@@ -45,7 +45,7 @@ namespace Test.Character.Inventory {
 
 			}
 		}
-
+		
 		private void InsideNewItem (ItemData item,int Amount) {
 			//同一アイテムが既に入ってないかの検索処理
 			foreach (var entry in items) {
@@ -55,7 +55,7 @@ namespace Test.Character.Inventory {
 				}
 				//同一エントリが存在しなかった際の処理
 				else{
-
+					
 				}
 			}
 		}

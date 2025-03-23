@@ -31,6 +31,7 @@ namespace Test.Character.Effect.Test {
 		private async UniTaskVoid DecreaseHPPerTime (CancellationToken token,int decreaseValue,float decreaseSpan) {
 			try{
 				Debug.Log($"{this.name}‚ÌbHPŒ¸­ˆ—‚ğŠJn‚µ‚Ü‚·");
+				
 			}
 			catch (OperationCanceledException){
 

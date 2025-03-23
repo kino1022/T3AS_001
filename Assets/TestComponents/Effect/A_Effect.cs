@@ -17,6 +17,6 @@ namespace Test.Character.Effect {
 		/// </summary>
 		public Action<A_Effect> wasRelease;
 
-
+		
 	}
 }
