@@ -9,7 +9,6 @@ namespace Test.Input {
 	public class MultiLeberInputData : ScriptableObject {
 		/// <summary>
 		/// 要求する入力方向は八方向かどうか
-		/// 
 		/// </summary>
 		public Boolean isEightDirection;
 		/// <summary>

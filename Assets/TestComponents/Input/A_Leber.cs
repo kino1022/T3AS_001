@@ -12,6 +12,7 @@ namespace Test.Input {
 	/// あらゆるスティックやレバーの基底クラス
 	/// </summary>
 	public abstract class A_Leber : MonoBehaviour {
+
 		[SerializeField] private Vector2 _pos = Vector2.zero;
 		/// <summary>
 		///	Vector2形式でのレバーの位置

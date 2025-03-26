@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Test.Character.Status.Examples {
-	public class HealthPoint {
+	public class HealthPoint : MonoBehaviour {
 		/// <summary>
 		/// ‰ñ•œ—Ê‚É‚©‚©‚é•â³’l‚ÌŠÇ—ƒNƒ‰ƒX
 		/// </summary>

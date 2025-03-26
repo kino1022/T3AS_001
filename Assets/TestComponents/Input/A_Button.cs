@@ -99,8 +99,15 @@ namespace Test.Input {
         /// <returns></returns>
         async private UniTaskVoid PhaseHoldTimer (CancellationToken token, float waitTime) {
             try {
-                if (this.condition == Press) {
+                UnityEvent wrapEvent = new UnityEvent();
+                wrapEvent.AddListener(() => wasRelease.Invoke(1.0f));
+                var isRelease = await WaitForUnityEvent(wrapEvent, waitTime,this.GetCancellationTokenOnDestroy());
+
+                if (isRelease) {
                     condition = Hold;
+                }
+                else {
+                    
                 }
             }
             catch(OperationCanceledException) {

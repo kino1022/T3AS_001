@@ -16,7 +16,5 @@ namespace Test.Character.Effect {
 		/// バフが消滅した際に発火されるイベント
 		/// </summary>
 		public Action<A_Effect> wasRelease;
-
-		
 	}
 }

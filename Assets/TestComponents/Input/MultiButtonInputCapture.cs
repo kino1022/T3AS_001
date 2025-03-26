@@ -63,9 +63,9 @@ namespace Test.Input {
 
         public async UniTask<Boolean> WaitForUnityEvent (UnityEvent unityEvent,float timeout) {
             try {
-                var tcs = new UniTaskCompletionSource();
+                var tcs = new UniTaskCompletionSource();//CompletionSourseのインスタンス化処理
 
-                unityEvent.AddListener(OnTrigger);
+                unityEvent.AddListener(OnTrigger);//発火時コールバックのリスナー適用処理
 
                 var completedTask = await UniTask.WhenAny(tcs.Task,UniTask.Delay(TimeSpan.FromSeconds(timeout)));
 
