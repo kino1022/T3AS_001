@@ -8,12 +8,12 @@ namespace Test.Character.Effect {
 	public abstract class A_EffectManager : MonoBehaviour {
 
 		/// <summary>
-		/// Œ»İ“­‚¢‚Ä‚¢‚éŒø‰Ê‚ÌƒŠƒXƒg
+		/// ç¾åœ¨åƒã„ã¦ã„ã‚‹åŠ¹æœã®ãƒªã‚¹ãƒˆ
 		/// </summary>
 		private List<A_Effect> _effects;
 
 		/// <summary>
-		/// V‚µ‚¢Œø‰Ê‚ğ—^‚¦‚éƒƒ\ƒbƒh
+		/// æ–°ã—ã„åŠ¹æœã‚’ä¸ãˆã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="constroctour"></param>
@@ -24,7 +24,7 @@ namespace Test.Character.Effect {
 		}
 
 		/// <summary>
-		/// wasRelease‚ğó‚¯æ‚Á‚½Û‚ÉŒÄ‚Î‚ê‚éƒƒ\ƒbƒh
+		/// wasReleaseã‚’å—ã‘å–ã£ãŸéš›ã«å‘¼ã°ã‚Œã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 		/// </summary>
 		/// <param name="target"></param>
 		private void GetWasRelease (A_Effect target) {
@@ -33,7 +33,7 @@ namespace Test.Character.Effect {
 		}
 
 		/// <summary>
-		/// ƒoƒt‚©ƒfƒoƒt‚©‘I‘ğ‚µ‚½•û‚ğ‘S‚ÄœŠO‚·‚éƒƒ\ƒbƒh
+		/// ãƒãƒ•ã‹ãƒ‡ãƒãƒ•ã‹é¸æŠã—ãŸæ–¹ã‚’å…¨ã¦é™¤å¤–ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 		/// </summary>
 		public void RereleaseEffectType (EffectType type) {
 			foreach (var effect in _effects) {

@@ -4,14 +4,14 @@ using Test.Character.Ability;
 
 namespace Test.Character.Skill {
 	[System.Serializable]
-	[CreateAssetMenu(fileName = "AcquireAbility",menuName = "習得アビリティ")]
+	[CreateAssetMenu(fileName = "AcquireAbility",menuName = "鄙貞ｾ励い繝薙Μ繝�繧｣")]
 	public class AcquireAbility : ScriptableObject {
 		/// <summary>
-		/// 習得するアビリティ
+		/// 鄙貞ｾ励☆繧九い繝薙Μ繝�繧｣
 		/// </summary>
 		public A_Ability ability;
 		/// <summary>
-		/// 習得するスキルレベル
+		/// 鄙貞ｾ励☆繧九せ繧ｭ繝ｫ繝ｬ繝吶Ν
 		/// </summary>
 		public int skillLevel;
 	}

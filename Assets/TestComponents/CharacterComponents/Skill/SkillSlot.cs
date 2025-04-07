@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Test.Character.Skill {
     /// <summary>
-    /// ƒZƒbƒg’†‚ÌƒXƒLƒ‹‚ğŠÇ—‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg
+    /// ã‚»ãƒƒãƒˆä¸­ã®ã‚¹ã‚­ãƒ«ã‚’ç®¡ç†ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
     /// </summary>
     public class SkillList : MonoBehaviour {
 
         private int _slotAmount;
         /// <summary>
-        /// ƒXƒLƒ‹ƒXƒƒbƒg‚ÌÅ‘å”
+        /// ã‚¹ã‚­ãƒ«ã‚¹ãƒ­ãƒƒãƒˆã®æœ€å¤§æ•°
         /// </summary>
         /// <value></value>
         public int slotAmount {
@@ -22,7 +22,7 @@ namespace Test.Character.Skill {
             }
         }
         /// <summary>
-        /// Œ»İƒZƒbƒg’†‚ÌƒXƒLƒ‹
+        /// ç¾åœ¨ã‚»ãƒƒãƒˆä¸­ã®ã‚¹ã‚­ãƒ«
         /// </summary>
         [SerializeField] public List<A_Skill> skills;
 

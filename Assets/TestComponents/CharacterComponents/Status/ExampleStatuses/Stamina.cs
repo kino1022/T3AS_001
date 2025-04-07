@@ -6,22 +6,22 @@ using UnityEngine.Events;
 namespace Test.Character.Status {
 	public class Stamina : MonoBehaviour {
 		/// <summary>
-		///	ƒXƒ^ƒ~ƒiÁ”ï—Ê‚É‘Î‚µ‚Ä‚©‚©‚é•â³’l‚ÌŠÇ—ƒ}ƒl[ƒWƒƒ[
+		///	ã‚¹ã‚¿ãƒŸãƒŠæ¶ˆè²»é‡ã«å¯¾ã—ã¦ã‹ã‹ã‚‹è£œæ­£å€¤ã®ç®¡ç†ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼
 		/// </summary>
 		[SerializeField] public A_CollectionManager consumeManager;
 		/// <summary>
-		/// Å‘åƒXƒ^ƒ~ƒi‚ÌŠÇ—ƒNƒ‰ƒX
+		/// æœ€å¤§ã‚¹ã‚¿ãƒŸãƒŠã®ç®¡ç†ã‚¯ãƒ©ã‚¹
 		/// </summary>
 		private MaxStamina maxStamina;
 		/// <summary>
-		///	ƒXƒ^ƒ~ƒi‚ª0‚É‚È‚Á‚½Û‚É”­‰Î‚³‚ê‚éƒCƒxƒ“ƒg
+		///	ã‚¹ã‚¿ãƒŸãƒŠãŒ0ã«ãªã£ãŸéš›ã«ç™ºç«ã•ã‚Œã‚‹ã‚¤ãƒ™ãƒ³ãƒˆ
 		/// </summary>
 		public UnityEvent wasZero;
 
 		private void Start () {
 			maxStamina = this.GetComponent<MaxStamina>();
 			if (maxStamina == null) {
-				Debug.Log("Å‘åƒXƒ^ƒ~ƒi‚ÌŠÇ—ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½");
+				Debug.Log("æœ€å¤§ã‚¹ã‚¿ãƒŸãƒŠã®ç®¡ç†ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ");
 			}
 		}
 	}

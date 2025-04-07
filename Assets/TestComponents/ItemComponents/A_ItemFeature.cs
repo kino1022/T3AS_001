@@ -2,10 +2,11 @@ using System;
 using UnityEngine;
 
 namespace Test.Item {
+	[System.Serializable]
 	/// <summary>
-	/// �X�^�b�N�s�Ȃǂ̃A�C�e���̓����̊��N���X(�C���^�[�t�F�[�X���ƃG�f�B�^�ł̑��삪�o���Ȃ��̂Œ��ۉ����܂���)
+	/// スタック不可などのアイテムの特徴の基底クラス(インターフェースだとエディタでの操作が出来ないので抽象化しました)
 	/// </summary>
-	public abstract class A_ItemFeature {
-		
+	public abstract class A_ItemFeature : ScriptableObject {
+
 	}
 }

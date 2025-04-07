@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Test.Character.Status{
     /// <summary>
-    /// Å‘åMP‚ğŠÇ—‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg
+    /// æœ€å¤§MPã‚’ç®¡ç†ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
     /// </summary>
     public class MaxMagicPoint : A_DevStatus {
         

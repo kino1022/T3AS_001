@@ -12,6 +12,10 @@ namespace Test.Input {
 		/// </summary>
 		public Boolean isEightDirection;
 		/// <summary>
+		/// 入力に使用するレバーのクラス
+		/// </summary>
+		public A_Leber lebber;
+		/// <summary>
 		/// 要求する方向の配列
 		/// </summary>
 		public List<Direction8> directions8;

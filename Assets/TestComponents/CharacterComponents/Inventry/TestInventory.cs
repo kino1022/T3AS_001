@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Test.Character.Inventory {
     /// <summary>
-    /// ìŒ^‚ÌƒCƒ“ƒxƒ“ƒgƒŠ
+    /// è©¦ä½œå‹ã®ã‚¤ãƒ³ãƒ™ãƒ³ãƒˆãƒª
     /// </summary>
     public class TestInventory : A_Inventory {
 

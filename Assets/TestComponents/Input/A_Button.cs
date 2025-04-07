@@ -2,60 +2,55 @@ using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using GenerallySys.Definition;
-using Test.Definition;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 using static GenerallySys.Definition.ButtonCondition;
 using static GenerallySys.Utility.GenerallyUtility;
 
 namespace Test.Input {
     /// <summary>
-    /// ‘S‚Ä‚Ì‰¼‘zƒ{ƒ^ƒ“i“à•”“I‚É‘¶İ‚·‚é‰Ÿ‰ºó‘Ô‚ğŠÇ—‚·‚éƒNƒ‰ƒXj‚ÌŠî’êƒNƒ‰ƒX
+    /// å…¨ã¦ã®ä»®æƒ³ãƒœã‚¿ãƒ³ï¼ˆå†…éƒ¨çš„ã«å­˜åœ¨ã™ã‚‹æŠ¼ä¸‹çŠ¶æ…‹ã‚’ç®¡ç†ã™ã‚‹ã‚¯ãƒ©ã‚¹ï¼‰ã®åŸºåº•ã‚¯ãƒ©ã‚¹
     /// </summary>
     public abstract class A_Button : MonoBehaviour {
         /// <summary>
-        /// “K—p‚·‚éƒ{ƒ^ƒ“‚Ìƒf[ƒ^
+        /// é©ç”¨ã™ã‚‹ãƒœã‚¿ãƒ³ã®ãƒ‡ãƒ¼ã‚¿
         /// </summary>
         private ButtonData _data;
         /// <summary>
-        /// ’·‰Ÿ‚µ‚ÉˆÚs‚·‚é‚Ü‚Å‚É—v‹‚·‚é‰Ÿ‰ºŠÔ
+        /// é•·æŠ¼ã—ã«ç§»è¡Œã™ã‚‹ã¾ã§ã«è¦æ±‚ã™ã‚‹æŠ¼ä¸‹æ™‚é–“
         /// </summary>
         private float _phaseHold;
         /// <summary>
-        /// ƒ{ƒ^ƒ“ó‘Ô‚ªHold‚É‚È‚Á‚Ä‚©‚ç‰Ÿ‰º‚³‚ê‘±‚¯‚½ŠÔ
+        /// ãƒœã‚¿ãƒ³çŠ¶æ…‹ãŒHoldã«ãªã£ã¦ã‹ã‚‰æŠ¼ä¸‹ã•ã‚Œç¶šã‘ãŸæ™‚é–“
         /// </summary>
         private float _HoldTime = 0.0f;
 
         private ButtonCondition _condition = None;
         /// <summary>
-        /// Œ»İ‚Ìƒ{ƒ^ƒ“‚Ìó‘Ô(ƒvƒƒpƒeƒB)
+        /// ç¾åœ¨ã®ãƒœã‚¿ãƒ³ã®çŠ¶æ…‹(ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£)
         /// </summary>
         /// <value></value>
         public ButtonCondition condition {
             get{return _condition;}
             set {
-                //ó‘Ô‚ªHold‚©‚çPress‚É‘JˆÚ‚µ‚½Û‚Ì”­‰Îˆ—
+                //çŠ¶æ…‹ãŒHoldã‹ã‚‰Pressã«é·ç§»ã—ãŸéš›ã®ç™ºç«å‡¦ç†
                 if (_condition == Hold || value == None){
                     wasRelease?.Invoke(_HoldTime);
                 }
-                //ó‘Ô‚ªNone‚©‚çPress‚É‘JˆÚ‚µ‚½Û‚Ì”­‰Îˆ—
+                //çŠ¶æ…‹ãŒNoneã‹ã‚‰Pressã«é·ç§»ã—ãŸéš›ã®ç™ºç«å‡¦ç†
                 else if (_condition == None || value == Press) {
                     wasPress?.Invoke();
                 }
                 _condition = value;
             }
         }
-
         /// <summary>
-        /// ƒ{ƒ^ƒ“‚ªNone‚©‚çPress‚É•Ï‰»‚µ‚½Û‚É”­‰Î‚³‚ê‚éUnityEventB
+        /// ãƒœã‚¿ãƒ³ãŒNoneã‹ã‚‰Pressã«å¤‰åŒ–ã—ãŸéš›ã«ç™ºç«ã•ã‚Œã‚‹UnityEventã€‚
         /// </summary>
         public UnityEvent wasPress;
-
         /// <summary>
-        /// ƒ{ƒ^ƒ“‚ªHold‚©‚çNone‚É•Ï‰»‚µ‚½Û‚É”­‰Î‚³‚ê‚éUnityEventAˆø”‚Í_HoldTime
+        /// ãƒœã‚¿ãƒ³ãŒHoldã‹ã‚‰Noneã«å¤‰åŒ–ã—ãŸéš›ã«ç™ºç«ã•ã‚Œã‚‹UnityEventã€å¼•æ•°ã¯_HoldTime
         /// </summary>
         public UnityEvent<float> wasRelease;
 
@@ -64,39 +59,39 @@ namespace Test.Input {
                 _phaseHold = _data.phaseHoldTime;
             }
             else {
-                Debug.Log($"{this.name}‚ÉButtonData‚ªƒAƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ!!");
+                Debug.Log($"{this.name}ã«ButtonDataãŒã‚¢ã‚¿ãƒƒãƒã•ã‚Œã¦ã„ã¾ã›ã‚“!!");
             }
         }
 
         /// <summary>
-        /// InputSystem‚©‚çŒÄ‚Ño‚³‚ê‚éƒƒ\ƒbƒh
+        /// InputSystemã‹ã‚‰å‘¼ã³å‡ºã•ã‚Œã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
         /// </summary>
         /// <param name="context"></param>
         public void WasPress (InputAction.CallbackContext context) {
             if (context.performed) {
-                Debug.Log($"{this.name}‚ÉŠ„‚è“–‚Ä‚ç‚ê‚½ƒ{ƒ^ƒ“‚ª‰Ÿ‰º‚³‚ê‚Ü‚µ‚½");
+                Debug.Log($"{this.name}ã«å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸãƒœã‚¿ãƒ³ãŒæŠ¼ä¸‹ã•ã‚Œã¾ã—ãŸ");
                 if (_condition == None) {
                     _condition = Press;
                     PhaseHoldTimer(this.GetCancellationTokenOnDestroy(),_phaseHold).Forget();
                 }
             }
             if (context.canceled) {
-                Debug.Log($"{this.name}‚ÉŠ„‚è“–‚Ä‚ç‚ê‚½ƒ{ƒ^ƒ“‚ª—£‚³‚ê‚Ü‚µ‚½");
+                Debug.Log($"{this.name}ã«å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸãƒœã‚¿ãƒ³ãŒé›¢ã•ã‚Œã¾ã—ãŸ");
                 if (condition != None) {
                     condition = None;
                 }
                 else{
-                    Debug.Log($"{this.name}‚Å“ñd‚ÌƒŠƒŠ[ƒXˆ—‚ª”­¶‚µ‚Ü‚µ‚½B");
+                    Debug.Log($"{this.name}ã§äºŒé‡ã®ãƒªãƒªãƒ¼ã‚¹å‡¦ç†ãŒç™ºç”Ÿã—ã¾ã—ãŸ");
                 }
             }
         }
 
         /// <summary>
-        /// ƒ{ƒ^ƒ“‚ªw’èŠÔ‰Ÿ‚³‚ê‘±‚¯‚½ê‡‚ÉPress‚©‚çHold‚Éó‘ÔˆÚs‚ğs‚¤ƒ^ƒXƒN(–¢Š®¬)
+        /// ãƒœã‚¿ãƒ³ãŒæŒ‡å®šæ™‚é–“æŠ¼ã•ã‚Œç¶šã‘ãŸå ´åˆã«Pressã‹ã‚‰Holdã«çŠ¶æ…‹ç§»è¡Œã‚’è¡Œã†ã‚¿ã‚¹ã‚¯(æœªå®Œæˆ)
         /// </summary>
         /// <param name="token"></param>
         /// <param name="waitTime"></param>
-        /// <returns></returns>
+        /// <returns></returns>s
         async private UniTaskVoid PhaseHoldTimer (CancellationToken token, float waitTime) {
             try {
                 UnityEvent wrapEvent = new UnityEvent();

@@ -3,45 +3,45 @@ using UnityEngine;
 
 namespace Test.Definition {
     /// <summary>
-    /// •¨—”ñ•¨—‘S‚Ä‚Ì‘®«•ª—Ş
+    /// ç‰©ç†éç‰©ç†å…¨ã¦ã®å±æ€§åˆ†é¡
     /// </summary>
     public enum Elements {
         /// <summary>
-        /// aŒ‚‘®«
+        /// æ–¬æ’ƒå±æ€§
         /// </summary>
         Slash,
         /// <summary>
-        /// ‘ÅŒ‚‘®«
+        /// æ‰“æ’ƒå±æ€§
         /// </summary>
         Blow,
         /// <summary>
-        /// h“Ë‘®«
+        /// åˆºçªå±æ€§
         /// </summary>
         Pierting,
         /// <summary>
-        /// ËŒ‚‘®«
+        /// å°„æ’ƒå±æ€§
         /// </summary>
         Shot,
         Fire,
     }
     /// <summary>
-    /// •¨—ƒ_ƒ[ƒW‚Ì‘®«•ª—Ş
+    /// ç‰©ç†ãƒ€ãƒ¡ãƒ¼ã‚¸ã®å±æ€§åˆ†é¡
     /// </summary>
     public enum PhysicalElement {
         /// <summary>
-        /// aŒ‚‘®«
+        /// æ–¬æ’ƒå±æ€§
         /// </summary>
         Slash = Elements.Slash,
         /// <summary>
-        /// ‘ÅŒ‚‘®«
+        /// æ‰“æ’ƒå±æ€§
         /// </summary>
         Blow = Elements.Blow,
         /// <summary>
-        /// h“Ë‘®«
+        /// åˆºçªå±æ€§
         /// </summary>
         Pierting = Elements.Pierting,
         /// <summary>
-        /// ËŒ‚‘®«
+        /// å°„æ’ƒå±æ€§
         /// </summary>
         Shot = Elements.Shot,
     }

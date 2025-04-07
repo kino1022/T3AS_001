@@ -4,7 +4,7 @@ using static Test.Character.Definition.DamageType;
 
 namespace Test.Character.Resistance.Examples {
     /// <summary>
-    /// aŒ‚‘®«ƒ_ƒ[ƒW‚É‘Î‚·‚é‘Ï«‚ğŠÇ—‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒgiƒeƒXƒgj
+    /// æ–¬æ’ƒå±æ€§ãƒ€ãƒ¡ãƒ¼ã‚¸ã«å¯¾ã™ã‚‹è€æ€§ã‚’ç®¡ç†ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆï¼ˆãƒ†ã‚¹ãƒˆï¼‰
     /// </summary>
     public class SlashDamageResistance : A_ResistanceManager {
         

@@ -6,24 +6,24 @@ using UnityEngine.Events;
 
 namespace Test.Character.Skill {
     /// <summary>
-    /// ‘S‚Ä‚ÌƒXƒLƒ‹‚ÌŠî’êƒNƒ‰ƒX
+    /// å…¨ã¦ã®ã‚¹ã‚­ãƒ«ã®åŸºåº•ã‚¯ãƒ©ã‚¹
     /// </summary>
     public abstract class A_Skill {
         /// <summary>
-        /// ƒXƒLƒ‹‚Ì–¼‘OiƒQ[ƒ€’†‚Ì•\‹L‚É—p‚¢‚é–¼‘Oj
+        /// ã‚¹ã‚­ãƒ«ã®åå‰ï¼ˆã‚²ãƒ¼ãƒ ä¸­ã®è¡¨è¨˜ã«ç”¨ã„ã‚‹åå‰ï¼‰
         /// </summary>
         public string skillName;
         /// <summary>
-        /// ‚±‚ÌƒXƒLƒ‹‚Ìƒf[ƒ^
+        /// ã“ã®ã‚¹ã‚­ãƒ«ã®ãƒ‡ãƒ¼ã‚¿
         /// </summary>
         private SkillData _data;
         /// <summary>
-        /// Œ»İ‚ÌƒXƒLƒ‹ƒŒƒxƒ‹
+        /// ç¾åœ¨ã®ã‚¹ã‚­ãƒ«ãƒ¬ãƒ™ãƒ«
         /// </summary>
         private int _level;
 
         /// <summary>
-        /// Œ»İ‚ÌƒXƒLƒ‹ƒŒƒxƒ‹
+        /// ç¾åœ¨ã®ã‚¹ã‚­ãƒ«ãƒ¬ãƒ™ãƒ«
         /// </summary>
         public int level {
             get{ 
@@ -35,7 +35,7 @@ namespace Test.Character.Skill {
             }
         }
         /// <summary>
-        /// ƒXƒLƒ‹ƒŒƒxƒ‹‚ªã‚ª‚Á‚½Û‚ÉŒÄ‚Ño‚³‚ê‚éƒCƒxƒ“ƒg
+        /// ã‚¹ã‚­ãƒ«ãƒ¬ãƒ™ãƒ«ãŒä¸ŠãŒã£ãŸéš›ã«å‘¼ã³å‡ºã•ã‚Œã‚‹ã‚¤ãƒ™ãƒ³ãƒˆ
         /// </summary>
         public UnityEvent<int> skillLevelUp;
 
@@ -44,7 +44,7 @@ namespace Test.Character.Skill {
         private void wasSkillLevelUp (int level) {
             foreach(var ability in _data.abilitys){
                 if (ability.skillLevel == level) {
-                    //ƒAƒrƒŠƒeƒBƒŠƒXƒg‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ÉƒAƒrƒŠƒeƒB‚ğ“ü‚ê‚éˆ—ƒ’‘‚«‚ŞB
+                    //ã‚¢ãƒ“ãƒªãƒ†ã‚£ãƒªã‚¹ãƒˆã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã«ã‚¢ãƒ“ãƒªãƒ†ã‚£ã‚’å…¥ã‚Œã‚‹å‡¦ç†ãƒ²æ›¸ãè¾¼ã‚€ã€‚
                     
                     return;
                 }

@@ -4,17 +4,16 @@ namespace Test.Input {
     [System.Serializable]
     [CreateAssetMenu(fileName = "ButtonData",menuName = "ButtonData")]
     /// <summary>
-    /// ƒ{ƒ^ƒ“‚ÌŠeíî•ñ‚ğŠi”[‚·‚é
+    /// ãƒœã‚¿ãƒ³ã®å„ç¨®æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹
     /// </summary>
     public class ButtonData : ScriptableObject {
         /// <summary>
-        /// ƒ{ƒ^ƒ“‚Ì–¼‘O
+        /// ãƒœã‚¿ãƒ³ã®åå‰
         /// </summary>
         public string buttonName;
         /// <summary>
-        /// Press‚©‚çHold‚Éó‘Ô‚ªˆÚs‚·‚é‚Ü‚Å‚É—v‹‚·‚é’·‰Ÿ‚µŠÔ
+        /// Pressã‹ã‚‰Holdã«çŠ¶æ…‹ãŒç§»è¡Œã™ã‚‹ã¾ã§ã«è¦æ±‚ã™ã‚‹é•·æŠ¼ã—æ™‚é–“
         /// </summary>
         public float phaseHoldTime = 0.2f;
-        
     }
 }

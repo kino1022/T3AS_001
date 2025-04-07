@@ -1,6 +1,6 @@
 namespace Test.Item {
     /// <summary>
-    /// インベントリ内の空のアイテムエントリを表現する為のItemData
+    /// 繧､繝ｳ繝吶Φ繝医Μ蜀�縺ｮ遨ｺ縺ｮ繧｢繧､繝�繝繧ｨ繝ｳ繝医Μ繧定｡ｨ迴ｾ縺吶ｋ轤ｺ縺ｮItemData
     /// </summary>
     public class EntryItem : ItemData {
 

@@ -7,15 +7,15 @@ using static Test.Character.Definition.AbilityType;
 namespace Test.Character.Ability {
 	public abstract class A_Ability {
 		/// <summary>
-		/// ƒAƒrƒŠƒeƒB‚Ì–¼‘O
+		/// ã‚¢ãƒ“ãƒªãƒ†ã‚£ã®åå‰
 		/// </summary>
 		[SerializeField] public new string name;
 		/// <summary>
-		/// ƒAƒrƒŠƒeƒB‚Ì•ª—Ş
+		/// ã‚¢ãƒ“ãƒªãƒ†ã‚£ã®åˆ†é¡
 		/// </summary>
 		[SerializeField] public AbilityType type;
 		/// <summary>
-		/// ®‡«ƒ`ƒFƒbƒN‚É—p‚¢‚éK“¾Œ³ƒXƒLƒ‹B
+		/// æ•´åˆæ€§ãƒã‚§ãƒƒã‚¯ã«ç”¨ã„ã‚‹ç¿’å¾—å…ƒã‚¹ã‚­ãƒ«ã€‚
 		/// </summary>
 		public A_Skill learnFrom;
 	}

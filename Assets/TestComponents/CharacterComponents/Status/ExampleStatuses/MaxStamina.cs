@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Test.Character.Status {
 	/// <summary>
-	/// Å‘åƒXƒ^ƒ~ƒi‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg
+	/// æœ€å¤§ã‚¹ã‚¿ãƒŸãƒŠã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 	/// </summary>
 	public class MaxStamina : A_DevStatus {
-
+		
 	}
 }

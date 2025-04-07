@@ -1,20 +1,21 @@
 using System;
+using System.Linq;
 using Test.Item;
 using UnityEngine;
 
 namespace Test.Character.Inventory {
     /// <summary>
-    /// �C���x���g���ŃA�C�e�����Ǘ�����ۂ̒P�ʁB��u���b�N��ItemEntry�C���X�^���X��ɑ�������B
+    /// インベントリでアイテムを管理する際の単位。一ブロックがItemEntryインスタンス一個に相当する。
     /// </summary>
     public class ItemEntry {
         /// <summary>
-        /// �G���g���[���Ă���A�C�e���̃f�[�^
+        /// エントリーしているアイテムのデータ
         /// </summary>
         public ItemData item;
 
         private int _amount = 0;
         /// <summary>
-        /// �A�C�e���̐���
+        /// アイテムの数量
         /// </summary>
         public int amount {
             get { return _amount; }
@@ -26,6 +27,20 @@ namespace Test.Character.Inventory {
         public ItemEntry (ItemData item, int value) {
             this.item = item;
             this.amount = value;
+        }
+        /// <summary>
+        /// 引数分だけエントリー内のアイテムを加算する
+        /// </summary>
+        /// <param name="value"></param>
+        public void IncreaseItemAmount (int value) {
+            amount += value;
+            var allowStack = item.GetAllowStack();
+            if (allowStack == null) {
+                //スタック不可のものに対してのスタック処理がなされたのでエラーを返す
+            }
+            else if (allowStack.maxValue >= amount) {
+                //スタック許容量を超過する量がスタックされたのでエラーを返す
+            }
         }
     }
 }

@@ -6,13 +6,13 @@ using UnityEngine;
 namespace Test.Character.Effect.Test {
 	public abstract class A_TimeLimitEffect : A_Effect {
 		/// <summary>
-		/// ‘±‚·‚éŠÔ
+		/// æŒç¶šã™ã‚‹æ™‚é–“
 		/// </summary>
 		private float _duration;
 
 		private float _timer;
 		/// <summary>
-		/// c‚èŠÔ
+		/// æ®‹ã‚Šæ™‚é–“
 		/// </summary>
 		public float timer {
 			get { return _timer; } 
@@ -26,13 +26,13 @@ namespace Test.Character.Effect.Test {
 			WasEffectInstanced();
 		}
 		/// <summary>
-		/// Œp³æ‚Å—p‚¢‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÅŒÄ‚Ño‚³‚ê‚é‰Šú‰»ƒƒ\ƒbƒh
+		/// ç¶™æ‰¿å…ˆã§ç”¨ã„ã‚‹ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã§å‘¼ã³å‡ºã•ã‚Œã‚‹åˆæœŸåŒ–ãƒ¡ã‚½ãƒƒãƒ‰
 		/// </summary>
 		protected virtual void WasEffectInstanced () {
 
 		}
 		/// <summary>
-		/// Œø‰ÊŠÔ‰„’·ƒƒ\ƒbƒh
+		/// åŠ¹æœæ™‚é–“å»¶é•·ãƒ¡ã‚½ãƒƒãƒ‰
 		/// </summary>
 		/// <param name="value"></param>
 		private void ExtentionDuration (float value) {
@@ -41,7 +41,7 @@ namespace Test.Character.Effect.Test {
 		}
 
 		/// <summary>
-		/// ƒGƒtƒFƒNƒgÁ–Å‚Ìƒ^ƒCƒ}[ˆ—
+		/// ã‚¨ãƒ•ã‚§ã‚¯ãƒˆæ¶ˆæ»…ã®ã‚¿ã‚¤ãƒãƒ¼å‡¦ç†
 		/// </summary>
 		/// <param name="token"></param>
 		/// <returns></returns>
@@ -56,7 +56,7 @@ namespace Test.Character.Effect.Test {
 				
 			}
 			finally {
-				this.wasRelease?.Invoke(this);//ƒGƒtƒFƒNƒgÁ–ÅƒCƒxƒ“ƒg‚Ì”­‰Îˆ—
+				this.wasRelease?.Invoke(this);//ã‚¨ãƒ•ã‚§ã‚¯ãƒˆæ¶ˆæ»…ã‚¤ãƒ™ãƒ³ãƒˆã®ç™ºç«å‡¦ç†
 			}
 		}
 	}

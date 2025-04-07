@@ -4,19 +4,19 @@ using UnityEngine;
 
 namespace Test.Character.Ability {
     /// <summary>
-    /// K“¾Ï‚İ‚ÌƒAƒrƒŠƒeƒB‚ğŠÇ—‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg
+    /// ç¿’å¾—æ¸ˆã¿ã®ã‚¢ãƒ“ãƒªãƒ†ã‚£ã‚’ç®¡ç†ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
     /// </summary>
     public class AbilityList : MonoBehaviour {
         /// <summary>
-        /// K“¾‚µ‚Ä‚¢‚éƒAƒrƒŠƒeƒB‚ÌƒŠƒXƒg
+        /// ç¿’å¾—ã—ã¦ã„ã‚‹ã‚¢ãƒ“ãƒªãƒ†ã‚£ã®ãƒªã‚¹ãƒˆ
         /// </summary>
         [SerializeField] public List<A_Ability> abilities;
         /// <summary>
-        /// ƒAƒrƒŠƒeƒBK“¾‚ÌÛ‚É”­‰Î‚³‚ê‚éƒCƒxƒ“ƒg
+        /// ã‚¢ãƒ“ãƒªãƒ†ã‚£ç¿’å¾—ã®éš›ã«ç™ºç«ã•ã‚Œã‚‹ã‚¤ãƒ™ãƒ³ãƒˆ
         /// </summary>
         public Action<A_Ability> wasLearn;
         /// <summary>
-        /// ƒAƒrƒŠƒeƒB‚ğ–Y‚ê‚½Û‚É”­‰Î‚³‚ê‚éƒCƒxƒ“ƒg
+        /// ã‚¢ãƒ“ãƒªãƒ†ã‚£ã‚’å¿˜ã‚ŒãŸéš›ã«ç™ºç«ã•ã‚Œã‚‹ã‚¤ãƒ™ãƒ³ãƒˆ
         /// </summary>
         public Action<A_Ability> wasRemoved;
 
@@ -28,14 +28,14 @@ namespace Test.Character.Ability {
 
         }
         /// <summary>
-        /// V‹KƒAƒrƒŠƒeƒBK“¾‚ÌÛ‚ÉŒÄ‚Ôƒƒ\ƒbƒh
+        /// æ–°è¦ã‚¢ãƒ“ãƒªãƒ†ã‚£ç¿’å¾—ã®éš›ã«å‘¼ã¶ãƒ¡ã‚½ãƒƒãƒ‰
         /// </summary>
         /// <param name="constructor"></param>
         /// <typeparam name="T"></typeparam>
         public void LearnNewAbility<T> (Func<T> constructor) where T : A_Ability {
             var newAbility = constructor();
             abilities.Add(newAbility);
-            Debug.Log($"{newAbility.name}‚ğK“¾‚µ‚Ü‚µ‚½I");
+            Debug.Log($"{newAbility.name}ã‚’ç¿’å¾—ã—ã¾ã—ãŸï¼");
             wasLearn?.Invoke(newAbility);
         }
     }

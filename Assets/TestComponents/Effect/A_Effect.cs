@@ -5,15 +5,15 @@ using static GenerallySys.Definition.EffectType;
 
 namespace Test.Character.Effect {
 	/// <summary>
-	/// ‘S‚Ä‚Ìƒoƒt‚ÌŠî’êƒNƒ‰ƒX
+	/// å…¨ã¦ã®ãƒãƒ•ã®åŸºåº•ã‚¯ãƒ©ã‚¹
 	/// </summary>
 	public abstract class A_Effect {
 		/// <summary>
-		/// Œø‰Ê‚ªƒoƒt‚©ƒfƒoƒt‚©
+		/// åŠ¹æœãŒãƒãƒ•ã‹ãƒ‡ãƒãƒ•ã‹
 		/// </summary>
 		public EffectType type;
 		/// <summary>
-		/// ƒoƒt‚ªÁ–Å‚µ‚½Û‚É”­‰Î‚³‚ê‚éƒCƒxƒ“ƒg
+		/// ãƒãƒ•ãŒæ¶ˆæ»…ã—ãŸéš›ã«ç™ºç«ã•ã‚Œã‚‹ã‚¤ãƒ™ãƒ³ãƒˆ
 		/// </summary>
 		public Action<A_Effect> wasRelease;
 	}

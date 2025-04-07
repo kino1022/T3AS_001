@@ -5,11 +5,11 @@ using UnityEngine;
 using static GenerallySys.Definition.EffectType;
 namespace Test.Character.Effect.Test {
 	/// <summary>
-	/// ƒeƒXƒg—p‚Ìƒ_ƒ~[ƒfƒoƒt(ƒeƒXƒg—á‚Æ‚µ‚Ä‘Ï‹v’lbŒ¸­‚ğƒAƒ^ƒbƒ`)
+	/// ãƒ†ã‚¹ãƒˆç”¨ã®ãƒ€ãƒŸãƒ¼ãƒ‡ãƒãƒ•(ãƒ†ã‚¹ãƒˆä¾‹ã¨ã—ã¦è€ä¹…å€¤æš«æ™‚æ¸›å°‘ã‚’ã‚¢ã‚¿ãƒƒãƒ)
 	/// </summary>
 	public class DummyDebuffEffect : A_Effect {
 
-		public String name = "Œ±—pb‘Ï‹vŒ¸­";
+		public String name = "è©¦é¨“ç”¨æš«æ™‚è€ä¹…æ¸›å°‘";
 
 		private CancellationTokenSource cts = new CancellationTokenSource();
 
@@ -30,7 +30,7 @@ namespace Test.Character.Effect.Test {
 		/// <returns></returns>
 		private async UniTaskVoid DecreaseHPPerTime (CancellationToken token,int decreaseValue,float decreaseSpan) {
 			try{
-				Debug.Log($"{this.name}‚ÌbHPŒ¸­ˆ—‚ğŠJn‚µ‚Ü‚·");
+				Debug.Log($"{this.name}ã®æš«æ™‚HPæ¸›å°‘å‡¦ç†ã‚’é–‹å§‹ã—ã¾ã™");
 				
 			}
 			catch (OperationCanceledException){

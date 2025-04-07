@@ -2,63 +2,80 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using Test.Item;
+using System.Linq;
 
 namespace Test.Character.Inventory {
 	/// <summary>
-	/// �C���x���g���̊��N���X
+	/// インベントリの基底クラス
 	/// </summary>
 	public abstract class A_Inventory : MonoBehaviour {
 
 		[SerializeField] private int _wigth = 10;
 		/// <summary>
-		/// �C���x���g���̉���
+		/// インベントリの横幅
 		/// </summary>
 		public int wigth {
 			get { return _wigth; }
-			set { 
+			set {
 				_wigth = value;
-				maxStack = _wigth * _higher;
+				maxEntry = _wigth * _higher;
 			}
 		}
 
 		[SerializeField] private int _higher = 13;
 		/// <summary>
-		///�@�C���x���g���̍���
+		///　インベントリの高さ
 		/// </summary>
 		public int higher {
 			get { return _higher; }
 			set { 
 				_higher = value;
-				maxStack = _higher * _wigth;
+				maxEntry = _higher * _wigth;
 			}
 		}
-
-		public int maxStack = 0;
+		/// <summary>
+		/// インベントリに入るエントリの限界数
+		/// </summary>
+		public int maxEntry = 0;
 
 		public List<ItemEntry> items = new List<ItemEntry>();
 
-		public void AddNewItem (ItemData item,int Amount) {
-			if (items.Count >= wigth * higher) {
-				
+        private void Awake() {
+            maxEntry = wigth * higher;
+			if (!CheckIntegrityInventory()) {
+				Debug.LogWarning("インベントリコンポーネントの初期化で以上が生じています");
 			}
-			else {
+        }
 
+        /// <summary>
+        /// ItemEntryの新規生成処理を行うメソッド
+        /// </summary>
+        /// <param name="item">生成するエントリのアイテムデータ</param>
+        /// <param name="amount">生成するエントリのアイテム量</param>
+        private void CreateNewEntry (ItemData item,int amount) {
+			AllowItemStack allow = item.GetFeature<AllowItemStack>();
+			if (allow != null && allow.maxValue >= amount) {
+				//考慮すべき例外と加算フローがはっきりした段階で着手するべきである。
+				//今後の開発に遺恨を残すべきではない。
 			}
 		}
-		
-		private void InsideNewItem (ItemData item,int Amount) {
-			//����A�C�e�������ɓ����ĂȂ����̌�������
-			foreach (var entry in items) {
-				if (entry.item == item && entry.amount + Amount >= item.maxStack) {
-					entry.amount += Amount;
-					Debug.Log($"{entry.item.ItemName}���C���x���g�����̃G���g����{Amount}���Z���܂����B���݂̏�������{entry.amount}�ł�!!");
-				}
-				//����G���g�������݂��Ȃ������ۂ̏���
-				else{
-					
-				}
+		/// <summary>
+		/// インベントリの整合性チェックメソッド
+		/// </summary>
+		/// <returns></returns>
+		private Boolean CheckIntegrityInventory () {
+			Boolean isIntegrity = true;
+			if (items.Count > maxEntry) {
+				isIntegrity = false;
+				Debug.Log("インベントリ容量を超過するアイテムのエントリがあります。");
 			}
+			if (maxEntry <= 0) {
+				isIntegrity = false;
+				if (_higher <= 0) Debug.Log("インベントリの高さが0以下のためインベントリ容量が不整合です");
+				else if (_wigth <= 0) Debug.Log("インベントリの横幅が0以下のためインベントリ容量が不整合です");
+				else Debug.Log("インベントリ容量の正常化が行われていないようです。コードの見直しを行なってください");
+			}
+			return isIntegrity;
 		}
 	}
-
 }

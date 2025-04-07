@@ -6,15 +6,15 @@ using UnityEngine.Events;
 namespace Test.Character.Status.Examples {
 	public class HealthPoint : MonoBehaviour {
 		/// <summary>
-		/// 回復量にかかる補正値の管理クラス
+		/// 蝗槫ｾｩ驥上↓縺九°繧玖｣懈ｭ｣蛟､縺ｮ邂｡逅�繧ｯ繝ｩ繧ｹ
 		/// </summary>
 		[SerializeField] public A_CollectionManager healValueCollections;
 		/// <summary>
-		/// ダメージ補正値の管理クラス
+		/// 繝繝｡繝ｼ繧ｸ陬懈ｭ｣蛟､縺ｮ邂｡逅�繧ｯ繝ｩ繧ｹ
 		/// </summary>
 		[SerializeField] public A_CollectionManager damageCollections;
 		/// <summary>
-		/// 零になった際に発火されるUnityEvent
+		/// 髮ｶ縺ｫ縺ｪ縺｣縺滄圀縺ｫ逋ｺ轣ｫ縺輔ｌ繧偽nityEvent
 		/// </summary>
 		public UnityEvent wasZero;
 	}

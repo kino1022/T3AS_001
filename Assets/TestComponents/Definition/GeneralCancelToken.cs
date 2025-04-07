@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Test.Definition {
     /// <summary>
-    /// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Å‹¤—p‚·‚éCancellationToken‚ğ”­s‚µ‚ÄŠÇ—‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg
+    /// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§å…±ç”¨ã™ã‚‹CancellationTokenã‚’ç™ºè¡Œã—ã¦ç®¡ç†ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
     /// </summary>
     public class GeneralCancelToken : MonoBehaviour {
 

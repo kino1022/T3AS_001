@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace Test.Character.Skill {
 	[System.Serializable]
-	[CreateAssetMenu(fileName = "SkillData",menuName = "ƒXƒLƒ‹ƒf[ƒ^")]
+	[CreateAssetMenu(fileName = "SkillData",menuName = "ã‚¹ã‚­ãƒ«ãƒ‡ãƒ¼ã‚¿")]
 	/// <summary>
-	/// ƒXƒLƒ‹‚Ìƒf[ƒ^
+	/// ã‚¹ã‚­ãƒ«ã®ãƒ‡ãƒ¼ã‚¿
 	/// </summary>
 	public class SkillData : ScriptableObject {
 		
 		/// <summary>
-		/// K“¾ƒAƒrƒŠƒeƒB‚ÆK“¾n—û“x‚ð‹L‚µ‚½ƒf[ƒ^‚Ì”z—ñ
+		/// ç¿’å¾—ã‚¢ãƒ“ãƒªãƒ†ã‚£ã¨ç¿’å¾—ç†Ÿç·´åº¦ã‚’è¨˜ã—ãŸãƒ‡ãƒ¼ã‚¿ã®é…åˆ—
 		/// </summary>
 		[SerializeField] public List<AcquireAbility> abilitys;
 		/// <summary>
-		/// ƒXƒLƒ‹‚ÌÅ‘åƒŒƒxƒ‹
+		/// ã‚¹ã‚­ãƒ«ã®æœ€å¤§ãƒ¬ãƒ™ãƒ«
 		/// </summary>
 		[SerializeField] public int maxLevel;
 	}

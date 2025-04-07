@@ -6,15 +6,15 @@ using GenerallySys.CollectionManageSys;
 
 namespace Test.Character.Resistance {
     /// <summary>
-    /// 耐性値の管理を行うクラスの基底クラス
+    /// 閠先ｧ蛟､縺ｮ邂｡逅�繧定｡後≧繧ｯ繝ｩ繧ｹ縺ｮ蝓ｺ蠎輔け繝ｩ繧ｹ
     /// </summary>
     public abstract class A_ResistanceManager : A_CollectionManager {
         /// <summary>
-        /// 耐性を持つ対象の名前
+        /// 閠先ｧ繧呈戟縺､蟇ｾ雎｡縺ｮ蜷榊燕
         /// </summary>
         [SerializeField] private String _resistName;
         /// <summary>
-        /// 耐性を持つ対象の属性
+        /// 閠先ｧ繧呈戟縺､蟇ｾ雎｡縺ｮ螻樊ｧ
         /// </summary>
         [SerializeField] private Elements _elements;
     }

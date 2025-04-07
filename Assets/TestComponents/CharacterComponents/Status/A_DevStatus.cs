@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Test.Character.Status {
 	/// <summary>
-	/// A_BaseStatusの変化を受けて変化するステータスの基底クラス
+	/// A_BaseStatus縺ｮ螟牙喧繧貞女縺代※螟牙喧縺吶ｋ繧ｹ繝�繝ｼ繧ｿ繧ｹ縺ｮ蝓ｺ蠎輔け繝ｩ繧ｹ
 	/// </summary>
 	public abstract class A_DevStatus : A_Status { 
 		/// <summary>
-		/// 影響を与えるステータス
+		/// 蠖ｱ髻ｿ繧剃ｸ弱∴繧九せ繝�繝ｼ繧ｿ繧ｹ
 		/// </summary>
 		[SerializeField] private List<A_Status> _baseStatuses;
 	}

@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Test.Character.Status {
     /// <summary>
-    /// Œ»İ‚ÌMP‚ğŠÇ—‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg
+    /// ç¾åœ¨ã®MPã‚’ç®¡ç†ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
     /// </summary>
     public class MagicPoint : MonoBehaviour {
         /// <summary>
-        /// MP‚ÌÁ”ï—Ê‚É‚©‚©‚é•â³’l‚ğŠÇ—‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg
+        /// MPã®æ¶ˆè²»é‡ã«ã‹ã‹ã‚‹è£œæ­£å€¤ã‚’ç®¡ç†ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
         /// </summary>
         [SerializeField] public A_CollectionManager consumeValueManager;
     }

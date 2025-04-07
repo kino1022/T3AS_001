@@ -1,20 +1,21 @@
 using GenerallySys.CollectionManageSys;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Test.Character.Status {
 	/// <summary>
-	/// ‘S‚Ä‚ÌƒXƒe[ƒ^ƒX‚ÌŠî’êƒNƒ‰ƒX
+	/// å…¨ã¦ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®åŸºåº•ã‚¯ãƒ©ã‚¹
 	/// </summary>
 	public abstract class A_Status : MonoBehaviour {
 		/// <summary>
-		/// ƒXƒe[ƒ^ƒX‚Ì–¼‘O
+		/// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®åå‰
 		/// </summary>
 		[SerializeField] private string _statusName;
 
 		private float _baseValue;
 		/// <summary>
-		/// •â³‘O‚ÌŠî‘b’l
+		/// è£œæ­£å‰ã®åŸºç¤å€¤
 		/// </summary>
 		public float baseValue {
 			get {
@@ -33,7 +34,7 @@ namespace Test.Character.Status {
 
 		private float _value;
 		/// <summary>
-		/// •â³’l‚İ‚Å‚ÌÅI“I‚È’l
+		/// è£œæ­£å€¤è¾¼ã¿ã§ã®æœ€çµ‚çš„ãªå€¤
 		/// </summary>
 		public float value {
 			get {
@@ -52,7 +53,7 @@ namespace Test.Character.Status {
 
 		[SerializeField] private float _maxValue;
 		/// <summary>
-		/// ‚±‚ÌƒXƒe[ƒ^ƒX‚Ìæ‚ê‚éÅ‘å’l
+		/// ã“ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®å–ã‚Œã‚‹æœ€å¤§å€¤
 		/// </summary>
 		public float maxValue {
 			get { return _maxValue; } 
@@ -61,7 +62,7 @@ namespace Test.Character.Status {
 
 		[SerializeField] private float _minValue;
 		/// <summary>
-		/// ‚±‚ÌƒXƒe[ƒ^ƒX‚Ìæ‚ê‚éÅ¬’l
+		/// ã“ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®å–ã‚Œã‚‹æœ€å°å€¤
 		/// </summary>
 		public float minValue {
 			get { return _minValue; }
@@ -69,20 +70,22 @@ namespace Test.Character.Status {
 		}
 
 		/// <summary>
-		/// ƒXƒe[ƒ^ƒX•â³’l‚ÌŠÇ—ƒNƒ‰ƒX
+		/// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è£œæ­£å€¤ã®ç®¡ç†ã‚¯ãƒ©ã‚¹
 		/// </summary>
 		[SerializeField] public A_CollectionManager statusCollection;
-
-
 		/// <summary>
-		/// ’l‚ª•Ï‰»‚³‚ê‚½Û‚É”­‰Î‚³‚ê‚éƒCƒxƒ“ƒg
+		/// å…ƒã«ãªã‚‹ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®é…åˆ—
+		/// </summary>
+		[SerializeField] private List<A_Status> _baseStatus;
+		/// <summary>
+		/// å€¤ãŒå¤‰åŒ–ã•ã‚ŒãŸéš›ã«ç™ºç«ã•ã‚Œã‚‹ã‚¤ãƒ™ãƒ³ãƒˆ
 		/// </summary>
 		public Action wasValueChanged;
 
 		private void Start () {
 
 			if (statusCollection != null) {
-				Debug.Log($"{_statusName}‚Ì•â³’lƒ}ƒl[ƒWƒƒ[‚ªƒAƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚Ü‚¹‚ñI");
+				Debug.Log($"{_statusName}ã®è£œæ­£å€¤ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ãŒã‚¢ã‚¿ãƒƒãƒã•ã‚Œã¦ã„ã¾ã›ã‚“ï¼");
 			}
 			else {
 				statusCollection.wasChanged += CollectionValueWasChanged;
@@ -92,16 +95,15 @@ namespace Test.Character.Status {
 		}
 
 		/// <summary>
-		/// •â³’l‚Ì•Ï‰»‚É‚æ‚Á‚ÄŒÄ‚Ño‚³‚ê‚Ä_value‚ğ•â³’l‚İ‚Ì’l‚ÅÄŒvZ‚·‚é
+		/// è£œæ­£å€¤ã®å¤‰åŒ–ã«ã‚ˆã£ã¦å‘¼ã³å‡ºã•ã‚Œã¦_valueã‚’è£œæ­£å€¤è¾¼ã¿ã®å€¤ã§å†è¨ˆç®—ã™ã‚‹
 		/// </summary>
 		/// <param name="ratio"></param>
 		/// <param name="fix"></param>
 		private void CollectionValueWasChanged (float ratio,float fix) {
 			value = _baseValue * ratio + fix;
 		}
-
 		/// <summary>
-		/// Startƒƒ\ƒbƒh‚ÌÅŒã‚ÉŒÄ‚Ño‚³‚ê‚éƒƒ\ƒbƒh
+		/// Startãƒ¡ã‚½ãƒƒãƒ‰ã®æœ€å¾Œã«å‘¼ã³å‡ºã•ã‚Œã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 		/// </summary>
 		protected virtual void WasStartColled () {
 
