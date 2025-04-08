@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using static GenerallySys.Definition.Direction.Direction4;
 using static GenerallySys.Definition.Direction.Direction8;
 
@@ -68,7 +69,15 @@ namespace Test.Input {
 		private void Update () {
 
 		}
-
-
+		
+		/// <summary>
+		/// inputActionから呼び出されるメソッド
+		/// </summary>
+		/// <param name="context"></param>
+		public void OnStick (InputAction.CallbackContext context) {
+			if (context.performed) {
+				pos = context.ReadValue<Vector2>();
+			}
+		}
 	}
 }

@@ -12,11 +12,11 @@ namespace Test.Item {
         /// <summary>
         /// アイテムの名前
         /// </summary>
-        public string ItemName;
+        public string itemName;
         /// <summary>
         /// インベントリ内で表示されるアイテムの画像
         /// </summary>
-        public Image image;
+        public Image icon;
         /// <summary>
         /// アイテム一つ当たりの重量
         /// </summary>
@@ -33,12 +33,13 @@ namespace Test.Item {
             AllowItemStack allow = (AllowItemStack)features.Where(x => x.GetType() == typeof(AllowItemStack));
             return allow;
         }
+
         /// <summary>
         /// 任意のA_ItemFeatureを取得するメソッド
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T GetFeature<T> () where T : A_ItemFeature {
+        public T GetFeature<T>() where T : A_ItemFeature {
             T feature = (T)features.Where(x => x.GetType() == typeof(T));
             return feature;
         }

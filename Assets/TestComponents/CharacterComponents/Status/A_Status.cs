@@ -108,5 +108,9 @@ namespace Test.Character.Status {
 		protected virtual void WasStartColled () {
 
 		}
+
+		public float GetValue() {
+			return value;
+		}
 	}
 }

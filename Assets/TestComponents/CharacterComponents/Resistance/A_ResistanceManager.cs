@@ -9,6 +9,8 @@ namespace Test.Character.Resistance {
     /// 耐性値の管理を行うクラスの基底クラス
     /// </summary>
     public abstract class A_ResistanceManager : A_CollectionManager {
+        //固定値の耐性と割合の耐性を両方持つのでA_CollectionManagerを流用
+        
         /// <summary>
         /// 耐性を持つ対象の名前
         /// </summary>

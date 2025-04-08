@@ -42,6 +42,7 @@ namespace Test.Character.Inventory {
 
         private void Awake() {
             maxEntry = wigth * higher;
+            //整合性検査
 			if (!CheckIntegrityInventory()) {
 				Debug.LogWarning("インベントリコンポーネントの初期化で以上が生じています");
 			}

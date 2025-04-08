@@ -16,7 +16,7 @@ namespace Test.Input {
         /// <summary>
         /// 適用するボタンのデータ
         /// </summary>
-        private ButtonData _data;
+        [SerializeField] private ButtonData _data;
         /// <summary>
         /// 長押しに移行するまでに要求する押下時間
         /// </summary>
@@ -100,6 +100,7 @@ namespace Test.Input {
 
                 if (isRelease) {
                     condition = Hold;
+                    _HoldTime = 0.0f;//ボタン保持時間の初期化
                 }
                 else {
                     

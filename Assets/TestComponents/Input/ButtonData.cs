@@ -1,11 +1,11 @@
 using UnityEngine;
 
 namespace Test.Input {
+    /// <summary>
+    /// ボタンの各種情報を保管するクラス
+    /// </summary>
     [System.Serializable]
     [CreateAssetMenu(fileName = "ButtonData",menuName = "ButtonData")]
-    /// <summary>
-    /// ボタンの各種情報を格納する
-    /// </summary>
     public class ButtonData : ScriptableObject {
         /// <summary>
         /// ボタンの名前

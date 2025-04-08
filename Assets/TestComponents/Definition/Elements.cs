@@ -22,6 +22,9 @@ namespace Test.Definition {
         /// 射撃属性
         /// </summary>
         Shot,
+        /// <summary>
+        /// 
+        /// </summary>
         Fire,
     }
     /// <summary>

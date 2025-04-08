@@ -28,10 +28,11 @@ namespace Test.Character.Inventory {
             this.item = item;
             this.amount = value;
         }
+        
         /// <summary>
         /// 引数分だけエントリー内のアイテムを加算する
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">加算量</param>
         public void IncreaseItemAmount (int value) {
             amount += value;
             var allowStack = item.GetAllowStack();
@@ -40,6 +41,16 @@ namespace Test.Character.Inventory {
             }
             else if (allowStack.maxValue >= amount) {
                 //スタック許容量を超過する量がスタックされたのでエラーを返す
+            }
+        }
+        /// <summary>
+        /// 引数分だけエントリ内のアイテムを減少させる
+        /// </summary>
+        /// <param name="value"></param>
+        public void DecreaseItemAmount (int value) {
+            amount -= value;
+            if (amount < 0) {
+                amount = 0;
             }
         }
     }
