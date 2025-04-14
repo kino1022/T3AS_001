@@ -1,0 +1,34 @@
+{
+    "name": "BattleInputMap",
+    "maps": [
+        {
+            "name": "BattleMode",
+            "id": "76ca231d-81a5-459d-a66c-6d0884acdfb0",
+            "actions": [
+                {
+                    "name": "LStick",
+                    "type": "Value",
+                    "id": "bc890bb5-6b25-4ccc-8ec6-3e76a20c624b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c7328d08-12b0-4621-8b56-d3819c59ef04",
+                    "path": "<DualShockGamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
