@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace GenerallySys.Input.Button.Continuity.Data {
+    /// <summary>
+    /// 連続入力のデータ
+    /// </summary>
     [System.Serializable]
     [CreateAssetMenu(menuName = "GenerallySys/Input/Button/Continuity/Data",fileName = "ContinuityInputData",order = 0)]
     public class InputData {
