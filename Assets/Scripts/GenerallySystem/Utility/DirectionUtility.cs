@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Cysharp.Threading.Tasks;
 using GenerallySys.Definition.Direction;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using static GenerallySys.Definition.Direction.Direction4;
 using Vector2 = System.Numerics.Vector2;
@@ -60,6 +62,57 @@ namespace GenerallySys.Utility {
 			if (vertical == Direction2V.F2V) vec.y = 1.0f;
 			else if (vertical == Direction2V.B2V) vec.y = -1.0f;
 			return vec;
+		}
+		
+		/// <summary>
+		/// 任意の方向が時間ないに入力されれば真、そうでないなら偽を返すタスク
+		/// </summary>
+		/// <param name="input"></param>
+		/// <param name="direction"></param>
+		/// <param name="timeout"></param>
+		/// <returns></returns>
+		public static async UniTask<Boolean> WaitForAnyDirectionInput (Action<Direction4> input,Direction4 direction,float timeout) {
+			var tcs = new UniTaskCompletionSource();
+			input += OnTrigger;
+			var complete = await UniTask.WhenAny(
+				tcs.Task, 
+				UniTask.Delay(TimeSpan.FromSeconds(timeout))
+				);
+			
+			if (complete == 1) return true;
+			else return false;
+
+			void OnTrigger(Direction4 inputDirection) {
+				if (inputDirection == direction) {
+					tcs.TrySetResult();
+					input -= OnTrigger;
+				}
+			}
+		}
+		/// <summary>
+		/// 任意の方向への入力が一定時間以内に行われれば真、そうでなければ偽を返すタスク
+		/// </summary>
+		/// <param name="input"></param>
+		/// <param name="direction"></param>
+		/// <param name="timeout"></param>
+		/// <returns></returns>
+		public static async UniTask<Boolean> WaitForAnyDirectionInput(Action<Direction8> input, Direction8 direction, float timeout) {
+			var tcs = new UniTaskCompletionSource();
+			input += OnTrigger;
+			var complete = await UniTask.WhenAny(
+				tcs.Task, 
+				UniTask.Delay(TimeSpan.FromSeconds(timeout))
+			);
+			
+			if (complete == 1) return true;
+			else return false;
+
+			void OnTrigger(Direction8 inputDirection) {
+				if (inputDirection == direction) {
+					tcs.TrySetResult();
+					input -= OnTrigger;
+				}
+			}
 		}
 	}
 }
