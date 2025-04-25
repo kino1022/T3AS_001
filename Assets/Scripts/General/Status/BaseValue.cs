@@ -35,7 +35,7 @@ namespace General.Status {
         /// <summary>
         /// ステータス参照時にマイナスを返すのを許容するかどうかの真偽値
         /// </summary>
-        [SerializeField] public bool AllowMinusVlaue = true;
+        public bool AllowMinusVlaue = true;
         
         /// <summary>
         /// 値が変化する前に呼び出される仮想メソッド
