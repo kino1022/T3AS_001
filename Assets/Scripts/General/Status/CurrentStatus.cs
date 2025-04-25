@@ -1,10 +1,11 @@
+using General.Status.Interface;
 using UnityEngine;
 
 namespace General.Status {
     /// <summary>
     /// MaxStatusとセットで最大値と現在値を管理するコンポーネント
     /// </summary>
-    public class CurrentStatus : Status {
+    public class CurrentStatus : Status , IRatioHolder {
         
         //現在地が最大値を超えないようにする仕組みを用意すること
         
@@ -16,7 +17,7 @@ namespace General.Status {
         /// <summary>
         /// 最大値に対する現在値の割合
         /// </summary>
-        [SerializeField] public float valueRatio;
+        [SerializeField] public float valueRatio { get; set;}
 
         protected override void OnStart() {
             this.value.PostValueChangeEvent += OnValueChange;

@@ -12,5 +12,6 @@ namespace Equipment {
         /// そのスロットにセットされているアビリティ
         /// </summary>
         public WeaponAbility ability;
+        
     }
 }
