@@ -144,7 +144,6 @@ MonoBehaviour:
   allowMinusVlaue: 0
   statusData: {fileID: 0}
   maxStatus: {fileID: 3877043970184847218}
-  valueRatio: 0
 --- !u!114 &2977713854047160496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +160,9 @@ MonoBehaviour:
   slots:
   - isUniqueSlot: 0
     ability: {fileID: 0}
+  slotChangeUEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6065682054576917466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b623bd41676c4e44b2ea3e228b439759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elements:
+  - element:
+      rid: -2
+    elementRatio: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

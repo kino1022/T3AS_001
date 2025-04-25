@@ -12,7 +12,7 @@ namespace Equipment {
         /// <summary>
         /// 武器に付与する属性
         /// </summary>
-        [SerializeField] public List<WeaponAbility> elements;
+        [SerializeField] public List<WeaponElement> elements;
 
         private void Start() {
             if (elements.Count == 0) {

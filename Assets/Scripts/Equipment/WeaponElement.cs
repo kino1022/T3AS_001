@@ -10,7 +10,7 @@ namespace Equipment {
         /// <summary>
         /// 付与する属性
         /// </summary>
-        [SerializeField] public AElement element;
+        [SerializeReference] public AElement element;
         /// <summary>
         /// その属性の倍率
         /// </summary>

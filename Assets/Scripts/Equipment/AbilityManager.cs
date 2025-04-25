@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using CustomAbility;
 using UnityEngine;
 
@@ -11,8 +13,16 @@ namespace Equipment {
 
         [SerializeField] private AbilitySlotManager slotManager;
 
+        private void Start() {
+            slotManager = GetComponent<AbilitySlotManager>();
+        }
+
+        /// <summary>
+        /// スロットマネージャからスキルを取得する
+        /// </summary>
+        /// <returns></returns>
         private List<WeaponAbility> GetAbilitiesFromSlot() {
-            return null;
+            return slotManager.slots.Select(x => x.ability).ToList();
         }
     }
 }
