@@ -38,6 +38,14 @@ namespace General.Status {
         public bool AllowMinusVlaue = true;
         
         /// <summary>
+        /// イベントの発火などを全て無視して指定した値をvalueにセットするメソッド
+        /// </summary>
+        /// <param name="value"></param>
+        public void SetValueIgnoreEvent(float value) {
+            this.value = value;
+        }
+        
+        /// <summary>
         /// 値が変化する前に呼び出される仮想メソッド
         /// </summary>
         /// <param name="value"></param>

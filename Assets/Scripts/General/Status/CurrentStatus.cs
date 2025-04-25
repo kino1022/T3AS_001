@@ -5,6 +5,9 @@ namespace General.Status {
     /// MaxStatusとセットで最大値と現在値を管理するコンポーネント
     /// </summary>
     public class CurrentStatus : Status {
+        
+        //現在地が最大値を超えないようにする仕組みを用意すること
+        
         /// <summary>
         /// ステータスの最大値
         /// </summary>
