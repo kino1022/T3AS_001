@@ -38,10 +38,9 @@ namespace Test.Character.Skill {
         /// スキルレベルが上がった際に呼び出されるイベント
         /// </summary>
         public UnityEvent<int> skillLevelUp;
-
-
-
-        private void wasSkillLevelUp (int level) {
+        
+        
+        private void WasSkillLevelUp (int level) {
             foreach(var ability in _data.abilitys){
                 if (ability.skillLevel == level) {
                     //アビリティリストのコンポーネントにアビリティを入れる処理ヲ書き込む。
