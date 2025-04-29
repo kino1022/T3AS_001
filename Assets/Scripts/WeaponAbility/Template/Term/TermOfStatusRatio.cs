@@ -5,7 +5,7 @@ using General.Status;
 using General.Status.Interface;
 using UnityEngine;
 
-namespace CustomAbility.Template.Term {
+namespace WeaponAbility.Template.Term {
     [System.Serializable]
     [CreateAssetMenu(menuName = "Ability/WeaponAbility/CustomTerm/ステータス割合依存")] 
     public class TermOfStatusRatio :ExecuteTerm {

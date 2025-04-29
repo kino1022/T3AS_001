@@ -1,9 +1,15 @@
+using System;
 using UnityEngine;
 
-namespace CustomAbility {
-    public class AbilityEffect : ScriptableObject {
-    public virtual void OnExecute() { }
+namespace WeaponAbility {
+    [Serializable]
+    public abstract class AbilityEffect {
+        public virtual void OnExecute() {
+            
+        }
 
-    public virtual void OnDisExecute() { }
+        public virtual void OnDisExecute() {
+            
+        }
     }
 }

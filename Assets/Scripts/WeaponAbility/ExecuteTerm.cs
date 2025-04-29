@@ -3,18 +3,17 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace CustomAbility {
+namespace WeaponAbility {
     /// <summary>
     /// カスタムアビリティの発動条件を表記する
     /// </summary>
     [System.Serializable]
-    public class ExecuteTerm : ScriptableObject  {
+    public abstract class ExecuteTerm : ScriptableObject  {
         
         /// <summary>
         /// 条件の名前
         /// </summary>
-        public string TermName;
-        
+        public string termName;
         /// <summary>
         /// 発動条件を満たした際に発火するイベント
         /// </summary>
@@ -32,7 +31,7 @@ namespace CustomAbility {
         /// <summary>
         /// 条件の処理に使うタスクのためのCancellationToken
         /// </summary>
-        public CancellationTokenSource cts = new CancellationTokenSource();
+        protected CancellationTokenSource cts = new CancellationTokenSource();
 
         public virtual void SetUpTerm() {
             CancellationToken token = cts.Token;

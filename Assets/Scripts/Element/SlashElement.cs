@@ -4,7 +4,7 @@ namespace Element {
     /// </summary>
     [System.Serializable]
     public class SlashElement : APhysicalElement {
-        public string elementName = "Slash";
-        public string displayName = "斬撃";
+        public new string elementName = "Slash";
+        public new string displayName = "斬撃";
     }
 }

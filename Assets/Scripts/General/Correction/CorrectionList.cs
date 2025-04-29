@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-
-
+using Attribute;
 using General.Correction.Definition;
 using UnityEngine;
 
@@ -14,7 +13,8 @@ namespace General.Correction {
         /// <summary>
         /// 管理する補正値の分類
         /// </summary>
-        public CorrectionType type;
+        [SerializeReference,SelectableSerializeReference]
+        public CorrectionType Type;
         
         /// <summary>
         /// 管理している補正値のリスト
@@ -39,7 +39,7 @@ namespace General.Correction {
 
 
         public CorrectionList(CorrectionType type) {
-            this.type = type;
+            this.Type = type;
             Initialize();
         }
         
@@ -56,7 +56,7 @@ namespace General.Correction {
         }
 
         public void AddCorrection(Correction correction) {
-            if (correction.type == type) {
+            if (correction.Type == Type) {
                 Debug.LogWarning("管理している補正値のタイプとは異なる補正値が追加されようとしています");
                 return;
             }

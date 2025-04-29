@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using General.Correction.Definition;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -40,9 +39,9 @@ namespace General.Correction {
         /// <typeparam name="T"></typeparam>
         public void CreateNewCorrection<T>(params object[] args) where T : Correction {
             var correction = (T)Activator.CreateInstance(typeof(T), args);
-            var list = GetCorrectionListFromType(correction.type);
+            var list = GetCorrectionListFromType(correction.Type);
             if (list == null) {
-                list = CreateNewCorrectionList<CorrectionList>(correction.type);
+                list = CreateNewCorrectionList<CorrectionList>(correction.Type);
             }
             list.AddCorrection(correction);
         }
@@ -53,11 +52,11 @@ namespace General.Correction {
         /// <param name="type"></param>
         /// <returns></returns>
         private bool GetExsistListFromType(CorrectionType type) {
-            return correctionLists.Exists(x => x.type == type);
+            return correctionLists.Exists(x => x.Type == type);
         }
 
         private CorrectionList GetCorrectionListFromType(CorrectionType type) {
-            return correctionLists.Find(x => x.type == type);
+            return correctionLists.Find(x => x.Type == type);
         }
 
         

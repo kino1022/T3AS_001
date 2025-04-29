@@ -1,4 +1,7 @@
+using System;
 using Element.Definition;
+using UnityEngine;
+using static UnityEngine.Object;
 
 namespace Element {
     /// <summary>

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CustomAbility {
+namespace WeaponAbility {
     [System.Serializable]
     public class WeaponAbility : ScriptableObject {
         

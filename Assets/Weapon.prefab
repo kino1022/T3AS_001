@@ -158,11 +158,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotValue: 5
   slots:
-  - isUniqueSlot: 0
-    ability: {fileID: 0}
+  - rid: -2
   slotChangeUEvent:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &6065682054576917466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,12 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b623bd41676c4e44b2ea3e228b439759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elements:
-  - element:
-      rid: -2
-    elementRatio: 0
+  elements: []
   references:
     version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    RefIds: []

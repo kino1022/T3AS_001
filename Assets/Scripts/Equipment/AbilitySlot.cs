@@ -1,4 +1,3 @@
-using CustomAbility;
 
 namespace Equipment {
     [System.Serializable]
@@ -11,7 +10,7 @@ namespace Equipment {
         /// <summary>
         /// そのスロットにセットされているアビリティ
         /// </summary>
-        public WeaponAbility ability;
+        public WeaponAbility.WeaponAbility ability;
         
     }
 }

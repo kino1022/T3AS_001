@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using CustomAbility;
+using Attribute;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,11 +15,12 @@ namespace Equipment {
         /// <summary>
         /// この装備にセットされているアビリティ
         /// </summary>
-        [SerializeField] public List<AbilitySlot> slots;
+        [SerializeReference,SelectableSerializeReference]
+        public List<AbilitySlot> slots;
         
         public UnityEvent slotChangeUEvent;
 
-        public void SetNewSlot(WeaponAbility ability,bool isUnique = false) {
+        public void SetNewSlot(WeaponAbility.WeaponAbility ability,bool isUnique = false) {
             if (slots.Count >= slotValue) {
                 Debug.LogWarning($"アビリティスロットが一杯の状態でアビリティがセットされそうになりました");
                 return;

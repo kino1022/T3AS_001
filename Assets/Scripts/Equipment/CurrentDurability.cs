@@ -7,7 +7,6 @@ namespace Equipment {
     /// </summary>
     public class CurrentDurability : CurrentStatus, IRepairAble {
         
-        
         public void Repair(float amount) {
             AddStatusValue(amount);
             OnRepair(amount);

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CustomAbility;
 using UnityEngine;
 
 namespace Equipment {
@@ -9,7 +8,7 @@ namespace Equipment {
         /// <summary>
         /// 
         /// </summary>
-        [SerializeField] private List<WeaponAbility> abilities;
+        [SerializeField] private List<WeaponAbility.WeaponAbility> abilities;
 
         [SerializeField] private AbilitySlotManager slotManager;
 
@@ -21,8 +20,8 @@ namespace Equipment {
         /// スロットマネージャからスキルを取得する
         /// </summary>
         /// <returns></returns>
-        private List<WeaponAbility> GetAbilitiesFromSlot() {
-            return slotManager.slots.Select(x => x.ability).ToList();
+        private List<WeaponAbility.WeaponAbility> GetAbilitiesFromSlot() {
+            return slotManager.slots.Select<AbilitySlot, WeaponAbility.WeaponAbility>(x => x.ability).ToList();
         }
     }
 }
